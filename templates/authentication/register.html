@@ -1,0 +1,61 @@
+{% extends 'base_auth.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+  <div class="col-12" style="max-width: 400px;">
+    <div class="card mt-5 p-3">
+      <div class="card-body">
+        <div class="card-title text-center py-3">
+          <h4>Register for a Free Account</h4>
+        </div>
+        <form action="{% url 'register' %}" method="post">
+          {% csrf_token %}
+
+          {% comment %} {% include 'partials/_messages.html' %} {% endcomment %}
+          <div class="mb-3">
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              id="usernameField"
+              value="{{fieldValues.username}}"
+              class="form-control form-control-sm"
+            />
+            <div class="invalid-feedback" style="display:none"></div>
+            <p class="form-text text-success usernameSuccessOutput"></p>
+          </div>
+          <div class="mb-3">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              class="form-control form-control-sm"
+              id="emailField"
+              value="{{fieldValues.email}}"
+            />
+            <div class="invalid-feedback emailFeedBackArea" style="display:none"></div>
+          </div>
+          <div class="mb-3">
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              class="form-control form-control-sm"
+              id="passwordField"
+            />
+            <small class="float-end py-2 text-muted showPasswordToggle" role="button">SHOW</small>
+          </div>
+          <button type="submit" class="btn btn-primary w-100 submit-btn">
+            Register
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'js/register.js' %}"></script>
+
+{% endblock content %}
