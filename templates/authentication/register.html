@@ -13,7 +13,7 @@
         <form action="{% url 'register' %}" method="post">
           {% csrf_token %}
 
-          {% comment %} {% include 'partials/_messages.html' %} {% endcomment %}
+          {% include 'partials/_messages.html' %}
           <div class="mb-3">
             <input
               type="text"
