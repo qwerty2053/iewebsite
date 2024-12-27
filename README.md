@@ -41,11 +41,11 @@ This project is a comprehensive **Expense/Income Tracking Website** built with D
 ### Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/<your-repository-name>.git
+   git clone https://github.com/qwerty2053/iewebsite.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd <your-repository-name>
+   cd iewebsite
    ```
 3. Install dependencies using Pipenv:
    ```bash
